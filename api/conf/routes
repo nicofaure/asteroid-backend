@@ -1,0 +1,12 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+POST     /ships                           controllers.Application.createActor
+GET      /ships                           controllers.WebSocketController.ship
+POST     /ships/:shipId/move              controllers.Application.move(shipId:String)
+GET      /ships/:shipId/whereareyou        controllers.Application.whereAreYou(shipId:String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
